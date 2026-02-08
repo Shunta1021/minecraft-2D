@@ -14,6 +14,8 @@ export const metadata: Metadata = {
 };
 
 import Script from "next/script";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export default function RootLayout({
   children,
@@ -32,6 +34,8 @@ export default function RootLayout({
       </head>
       <body className={`${pixelify.variable} antialiased font-pixel bg-mc-bg text-mc-text`}>
         {children}
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
